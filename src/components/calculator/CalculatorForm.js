@@ -28,8 +28,6 @@ const CalculatorForm = (props) => {
       setYearlyContribution('');
       setExpectedReturn('');
       setDuration('');
-    } else {
-      console.log('no data to submit');
     }
   };
 
@@ -55,6 +53,7 @@ const CalculatorForm = (props) => {
   };
 
   const resetHandler = () => {
+    props.onCalculate();
     setCurrentSavings('');
     setYearlyContribution('');
     setExpectedReturn('');
