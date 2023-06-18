@@ -1,4 +1,4 @@
-.calculator-form {
+.calculation-form {
   padding: 1rem;
   max-width: 50rem;
   margin: 2rem auto;
@@ -21,7 +21,7 @@
   color: #113c32;
 }
 
-.calculator-form label {
+.calculation-form label {
   display: block;
   margin-bottom: 0.25rem;
   font-family: 'Roboto Condensed', sans-serif;
@@ -30,7 +30,7 @@
   text-transform: uppercase;
 }
 
-.calculator-form input {
+.calculation-form input {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #76c0ae;
@@ -73,4 +73,20 @@ button:hover {
 .buttonAlt:hover {
   background: transparent;
   color: #91e1d0;
+}
+
+.calculation-form__invalid-input-feedback {
+  color: rgb(165, 40, 40);
+}
+
+.calculation-form__invalid-input-feedback label {
+  max-width: 25rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: rgb(230, 201, 201);
+  border: 1px solid rgb(165, 40, 40);
+  border-radius: 10px;
 }

@@ -7,8 +7,13 @@ const CalculatorForm = (props) => {
   const [expectedReturn, setExpectedReturn] = useState('');
   const [duration, setDuration] = useState('');
 
+  const [isDataValid, setIsDataValid] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+
   const submitHandler = (e) => {
     e.preventDefault();
+    setIsFormSubmitted(true);
+
     const userInput = {
       currentSavings: currentSavings,
       yearlyContribution: yearlyContribution,
@@ -23,11 +28,13 @@ const CalculatorForm = (props) => {
       duration !== ''
     ) {
       props.onCalculate(userInput);
-      console.log('success');
+      setIsDataValid(true);
       setCurrentSavings('');
       setYearlyContribution('');
       setExpectedReturn('');
       setDuration('');
+    } else {
+      setIsDataValid(false);
     }
   };
 
@@ -58,10 +65,13 @@ const CalculatorForm = (props) => {
     setYearlyContribution('');
     setExpectedReturn('');
     setDuration('');
+    setIsFormSubmitted(false);
   };
 
+  let showError = !isDataValid && isFormSubmitted;
+
   return (
-    <form className='calculator-form' onSubmit={submitHandler}>
+    <form className='calculation-form' onSubmit={submitHandler}>
       <div className='input-group'>
         <p>
           <label htmlFor='current-savings'>Current Savings ($)</label>
@@ -116,6 +126,11 @@ const CalculatorForm = (props) => {
           Calculate
         </button>
       </p>
+      {showError && (
+        <div className='calculation-form__invalid-input-feedback'>
+          <label>Fill the form before calculate!</label>
+        </div>
+      )}
     </form>
   );
 };
