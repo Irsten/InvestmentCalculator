@@ -17,6 +17,10 @@
   outline: 0px;
 }
 
+.input-group input::placeholder {
+  color: #113c32;
+}
+
 .calculator-form label {
   display: block;
   margin-bottom: 0.25rem;
