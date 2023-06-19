@@ -1,0 +1,48 @@
+.error-modal {
+  position: fixed;
+  background: linear-gradient(180deg, #39a088, #359e86);
+  top: 30vh;
+  left: 20%;
+  width: 60%;
+  z-index: 100;
+  overflow: hidden;
+  border-radius: 15px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.error-modal__header {
+  display: flex;
+  padding: 0 20px;
+  background: linear-gradient(180deg, #1f584b, #17493d);
+}
+
+.error-modal__content {
+  padding: 0 20px;
+}
+
+.error-modal__content p {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.error-modal__footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.error-modal__footer__button {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border: 0;
+  background-color: blueviolet;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.error-modal__footer__button:hover {
+  background-color: rgb(64, 11, 114);
+  transition: 0.5s;
+}
